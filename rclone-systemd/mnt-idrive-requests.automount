@@ -1,0 +1,9 @@
+[Unit]
+Description=AutoMount for /mnt/idrive/requests
+
+[Automount]
+Where=/mnt/idrive/requests
+TimeoutIdleSec=600
+
+[Install]
+WantedBy=multi-user.target

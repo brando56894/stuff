@@ -1,0 +1,8 @@
+[Unit]
+Description=Mount for /mnt/idrive/shows
+
+[Mount]
+Type=rclone
+What=idrive:shows
+Where=/mnt/idrive/shows
+Options=rw,_netdev,allow_other,args2env,vfs-cache-mode=writes,config=/etc/rclone.conf,cache-dir=/var/rclone,no-modtime,vfs-cache-mode=full,transfers=8,allow-other,vfs-cache-max-size=180G,vfs-cache-max-age=5m,vv,log-file=/var/log/rclone/shows.log

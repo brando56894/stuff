@@ -1,0 +1,9 @@
+[Unit]
+Description=AutoMount for /mnt/idrive/vault
+
+[Automount]
+Where=/mnt/idrive/vault
+TimeoutIdleSec=600
+
+[Install]
+WantedBy=multi-user.target

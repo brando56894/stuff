@@ -1,0 +1,8 @@
+[Unit]
+Description=Mount for /mnt/idrive/games
+
+[Mount]
+Type=rclone
+What=idrive:games
+Where=/mnt/idrive/games
+Options=rw,_netdev,allow_other,args2env,vfs-cache-mode=writes,config=/etc/rclone.conf,cache-dir=/var/rclone,no-modtime,vfs-cache-mode=full,transfers=8,allow-other,vfs-cache-max-size=180G,vfs-cache-max-age=5m,vv,log-file=/var/log/rclone/games.log
