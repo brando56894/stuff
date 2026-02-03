@@ -6,11 +6,7 @@ for i in `ls /dev/disk/by-id|grep wwn|grep -v part`
    sudo smartctl -i /dev/disk/by-id/$i|head -n7|tail -n3
    echo "Capacity: $(sudo smartctl -a /dev/disk/by-id/$i|grep bytes|head -n1|awk '{print $5, $6}'|cut -c 2-8|tr -d ']')"
    echo "Health: $(sudo smartctl -H /dev/disk/by-id/$i|head -n5|tail -n1|awk '{print $6}')"
-   if [[ $i == "wwn-0x50025385a027fbce" ]]; then
-   	echo "Temperature (C): $(sudo smartctl -a /dev/disk/by-id/$i|grep 190|awk '{print $10}')"
-   else
-   	echo "Temperature (C): $(sudo smartctl -a /dev/disk/by-id/$i|grep 194|awk '{print $10}')"
-   fi
+   echo "Temperature (C): $(sudo smartctl -a /dev/disk/by-id/$i|grep Temperature_Celsius|awk '{print $10}')"
    echo ""
 done
 
